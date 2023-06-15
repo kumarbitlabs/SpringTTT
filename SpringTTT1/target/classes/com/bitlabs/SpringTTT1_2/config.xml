@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean name="emp1" class="com.bitlabs.SpringTTT1_2.Employee">
+		<property name="id" value="101"/>
+		<property name="name" value="nagul"/>
+		<property name="department" value="Training" />
+	</bean>
+	
+	<bean name="emp2" class="com.bitlabs.SpringTTT1_2.Employee">
+		<property name="id" value="102"/>
+		<property name="name" value="pavan"/>
+		<property name="department" value="Training" />
+	</bean>
+	
+	<bean name="emp3" class="com.bitlabs.SpringTTT1_2.Employee">
+		<property name="id" value="103"/>
+		<property name="name" value="Manasa"/>
+		<property name="department" value="Quality" />
+	</bean>
+	
+	<bean name="emp4" class="com.bitlabs.SpringTTT1_2.Employee">
+		<property name="id" value="104"/>
+		<property name="name" value="nikesh"/>
+		<property name="department" value="Quality" />
+	</bean>
+	
+	<bean name="emp5" class="com.bitlabs.SpringTTT1_2.Employee">
+		<property name="id" value="105"/>
+		<property name="name" value="Teja"/>
+		<property name="department" value="CST" />
+	</bean>
+	
+	<bean name="emp6" class="com.bitlabs.SpringTTT1_2.Employee">
+		<property name="id" value="106"/>
+		<property name="name" value="Manoj"/>
+		<property name="department" value="CST" />
+	</bean>
+	
+	
+	<bean name="Training" class="com.bitlabs.SpringTTT1_2.Department">
+		<property name="id" value="1"/>
+		<property name="name" value="Training" />
+		<property name="employee">
+			<list>
+				<ref bean="emp1"/>
+				<ref bean="emp2" />
+			</list>
+		</property>
+ 	</bean>
+ 	
+ 	<bean name="Quality" class="com.bitlabs.SpringTTT1_2.Department">
+		<property name="id" value="2"/>
+		<property name="name" value="Quality" />
+		<property name="employee">
+			<list>
+				<ref bean="emp3"/>
+				<ref bean="emp4" />
+			</list>
+		</property>
+ 	</bean>
+ 	
+ 	<bean name="CST" class="com.bitlabs.SpringTTT1_2.Department">
+		<property name="id" value="3"/>
+		<property name="name" value="CST" />
+		<property name="employee">
+			<list>
+				<ref bean="emp5"/>
+				<ref bean="emp6" />
+			</list>
+		</property>
+ 	</bean>
+ 	
+ 	
+ 	<bean name="departmentService" class="com.bitlabs.SpringTTT1_2.DepartmentService">
+    <property name="department">
+        <list>
+            <ref bean="Training" />
+            <ref bean="Quality" />
+            <ref bean="CST" />
+        </list>
+    </property>
+</bean>
+
+</beans>

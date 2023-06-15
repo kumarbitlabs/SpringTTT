@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean name="emp1" class="com.bitlabs.SpringTTT1.Employee">
+		<property name="id" value="101"/>
+		<property name="name" value="nagul" />
+		<property name="designation" value="managermentor"/>
+	</bean>
+	
+	<bean name="emp2" class="com.bitlabs.SpringTTT1.Employee">
+		<property name="id" value="102"/>
+		<property name="name" value="pavan" />
+		<property name="designation" value="mentor"/>
+	</bean>
+	
+	
+	<bean name="emp3" class="com.bitlabs.SpringTTT1.Employee">
+		<property name="id" value="103"/>
+		<property name="name" value="avinash" />
+		<property name="designation" value="softskillmentor"/>
+	</bean>
+	
+	<bean name="emp4" class="com.bitlabs.SpringTTT1.Employee">
+		<property name="id" value="104"/>
+		<property name="name" value="manasa" />
+		<property name="designation" value="QualityChecker"/>
+	</bean>
+	
+	<bean name="employeeService" class="com.bitlabs.SpringTTT1.EmployeeService">
+        <property name="employee">
+            <list>
+                <ref bean="emp1" />
+                <ref bean="emp2" />
+                <ref bean="emp3" />
+                <ref bean="emp4" />
+            </list>
+        </property>
+    </bean>
+
+</beans>
