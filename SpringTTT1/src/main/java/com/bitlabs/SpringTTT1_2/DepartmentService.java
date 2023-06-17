@@ -45,6 +45,39 @@ public class DepartmentService {
         }
     }
 	
+	public void displayEmployeesByDepartment(String departmentId) {
+        for (Department dept : department) {
+            if (dept.getId().equals(departmentId)) {
+                List<Employee> employees = dept.getEmployee();
+                System.out.println("Employees in Department with ID " + departmentId + ":");
+                for (Employee employee : employees) {
+                    System.out.println("  Employee ID: " + employee.getId());
+                    System.out.println("  Employee Name: " + employee.getName());
+                    System.out.println("---------------------------");
+                }
+                return;
+            }
+        }
+        System.out.println("Department with ID " + departmentId + " does not exist.");
+    }
+}
+
+public void addEmployeeToDepartment(String departmentId, Employee employee) {
+    boolean departmentExists = false;
+    for (Department dept : department) {
+        if (dept.getId().equals(departmentId)) {
+            dept.addEmployee(employee);
+            departmentExists = true;
+            break;
+        }
+    }
+    
+    if (!departmentExists) {
+        System.out.println("Department with ID " + departmentId + " does not exist.");
+    }
+}
+
+	
 	
 	
 	
