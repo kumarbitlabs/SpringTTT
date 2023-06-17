@@ -38,6 +38,10 @@ public class Department {
 	public String toString() {
 		return "Department [id=" + id + ", name=" + name + ", employee=" + employee + "]";
 	}
+	
+	public void addEmployee(Employee emp) {
+        employee.add(emp);
+    }
     
     
     
